@@ -1,0 +1,30 @@
+# Python Backend
+__pycache__/
+*.py[cod]
+*.pyc
+.env
+venv/
+*.db
+*.sqlite3
+
+# Node.js Frontend  
+node_modules/
+dist/
+.vite/
+*.log
+
+# Face Recognition Data
+backend/face_database/uploads/*
+backend/face_database/encodings/*
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Temporary files
+*.tmp
+*.bak
