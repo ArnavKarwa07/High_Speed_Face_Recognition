@@ -1,0 +1,33 @@
+# Backend
+backend/__pycache__
+backend/**/__pycache__
+backend/*.pyc
+backend/.pytest_cache
+backend/.coverage
+backend/htmlcov
+backend/venv
+backend/env
+backend/.env
+backend/face_database/*.db
+backend/face_database/uploads/*
+backend/face_database/encodings/*
+
+# Frontend
+frontend/node_modules
+frontend/dist
+frontend/.env
+frontend/.env.local
+frontend/.env.production
+frontend/npm-debug.log*
+frontend/yarn-debug.log*
+frontend/yarn-error.log*
+
+# General
+.git
+.gitignore
+.vscode
+.idea
+*.log
+*.md
+!README.md
+LICENSE

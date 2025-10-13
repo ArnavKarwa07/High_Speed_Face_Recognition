@@ -7,13 +7,13 @@ import {
   Box,
   Alert,
   CircularProgress,
-  Grid,
   Paper,
   Chip,
   List,
   ListItem,
   ListItemText,
   ListItemIcon,
+  Grid,
 } from "@mui/material";
 import { PhotoCamera, Videocam, Face, AccessTime } from "@mui/icons-material";
 import Webcam from "react-webcam";
@@ -122,7 +122,7 @@ const RecognizePage = () => {
       </Typography>
 
       <Grid container spacing={4}>
-        <Grid item xs={12} md={6}>
+        <Grid size={{ xs: 12, md: 6 }}>
           <Card>
             <CardContent>
               <Typography variant="h6" gutterBottom>
@@ -236,7 +236,7 @@ const RecognizePage = () => {
           </Card>
         </Grid>
 
-        <Grid item xs={12} md={6}>
+        <Grid size={{ xs: 12, md: 6 }}>
           <Card>
             <CardContent>
               <FaceRecognitionDisplay
@@ -282,25 +282,29 @@ const RecognizePage = () => {
                             <ListItemText
                               primary={result.name}
                               secondary={
-                                <Box sx={{ mt: 1 }}>
-                                  <Chip
-                                    label={`${result.confidence.toFixed(
-                                      1
-                                    )}% Confidence`}
-                                    size="small"
-                                    color={getConfidenceColor(
-                                      result.confidence
-                                    )}
-                                  />
-                                  <Typography
-                                    variant="caption"
-                                    display="block"
-                                    sx={{ mt: 1 }}
+                                <React.Fragment>
+                                  <Box
+                                    component="span"
+                                    sx={{ display: "block", mt: 1 }}
+                                  >
+                                    <Chip
+                                      label={`${result.confidence.toFixed(
+                                        1
+                                      )}% Confidence`}
+                                      size="small"
+                                      color={getConfidenceColor(
+                                        result.confidence
+                                      )}
+                                    />
+                                  </Box>
+                                  <Box
+                                    component="span"
+                                    sx={{ display: "block", mt: 1 }}
                                   >
                                     Location: [{result.face_location.join(", ")}
                                     ]
-                                  </Typography>
-                                </Box>
+                                  </Box>
+                                </React.Fragment>
                               }
                             />
                           </ListItem>

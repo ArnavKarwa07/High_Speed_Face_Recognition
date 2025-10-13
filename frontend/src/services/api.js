@@ -69,6 +69,16 @@ export const faceAPI = {
       );
     }
   },
+
+  // Get performance metrics
+  getMetrics: async () => {
+    try {
+      const response = await api.get("/metrics");
+      return response.data;
+    } catch (error) {
+      throw new Error(error.response?.data?.detail || "Failed to get metrics");
+    }
+  },
 };
 
 export default api;
